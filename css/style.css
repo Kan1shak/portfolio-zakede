@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #756AB6;
+    --primary-lighter: #A29BCD;
+    --background-color: #F3F0E9;
+    --black-color: #373737;
+    --body-font: "Poppins";
+    --heading-font: "Dela Gothic One";
+}
+
+body {
+    font-family: var(--body-font), sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--background-color);
+}
+
+nav {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 16px 48px;
+    box-shadow: #373737 0px 0px 0px 8px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-logo {
+    font-family: var(--heading-font), sans-serif;
+    font-size: 1.5rem;
+    color: var(--background-color);
+    text-decoration: none;
+}
+
+.nav-links-holder{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 25px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--background-color);
+    font-size: 1.2rem;
+    font-family: var(--heading-font), sans-serif;
+}

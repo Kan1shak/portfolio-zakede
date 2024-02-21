@@ -108,7 +108,7 @@ header {
 }
 
 .about-text{
-    padding: 50px;
+    padding: 30px 0px;
     width: 475px;
     align-self: flex-start;
 }
@@ -122,10 +122,10 @@ header {
 }
 
 .about-p {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     text-align: right;
     font-family: var(--body-font), sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     margin-bottom: 25px;
 }
 

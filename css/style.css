@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -54,13 +55,15 @@ nav {
 }
 
 header {
-    height: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font: 2em var(--heading-font);
 }
 
+header img {
+    width: 80%;
+    height: 80%;
+}
 #about{
     height: 875px;
     padding: 80px 50px;
@@ -197,7 +200,7 @@ header {
 .projects-holder {
     display: grid;
     grid-template-columns: repeat(8,1fr);
-    gap: 15px 30px;
+    gap: 25px 40px;
 }
 
 .projects-item {
@@ -213,7 +216,7 @@ header {
 }
 
 .projects-item:hover{
-    box-shadow: var(--black-color) -6px 4px 0px 0px;
+    box-shadow: var(--black-color) -12px 8px 0px 0px;
     animation: hov 0.2s ease-in-out 1;
 }
 
@@ -244,6 +247,7 @@ header {
     color: var(--black-color);
     font-size: 2.5rem;
     font-family: var(--heading-font), sans-serif;
+    text-decoration: underline;
 }
 
 .projects-more a:hover{
@@ -255,4 +259,20 @@ footer {
     background-color: var(--primary-color);
     color: var(--background-color);
     height: 400px;
+}
+
+
+/* MISC */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+  
+  ::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+}
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary-lighter);
+    border: var(--black-color) 1.5pt solid;
 }

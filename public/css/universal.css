@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #756AB6;
+    --primary-lighter: #A29BCD;
+    --background-color: #F3F0E9;
+    --black-color: #373737;
+    --body-font: "Poppins";
+    --heading-font: "Dela Gothic One";
+}
+
+body {
+    font-family: var(--body-font), sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: var(--background-color);
+}
+
+/* MISC */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+  
+  ::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+}
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary-lighter);
+    border: var(--black-color) 1.5pt solid;
+}
+
+:focus-visible {
+    outline: none;
+}
+
+/* ANIMATIONS */
+@keyframes hov {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.01);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

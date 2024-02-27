@@ -1,0 +1,226 @@
+footer {
+    padding: 60px 40px 30px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-holder {
+    display: grid;
+    grid-template-columns: 2.5fr 1.5fr 1fr;
+    row-gap: 0px;
+    column-gap: 5px;
+    grid-template-rows: auto auto;
+}
+
+.footer-contact-me {
+    padding-right: 20%;
+}
+
+.footer-contact-me h2 {
+    position: relative;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-family: var(--heading-font), sans-serif;
+    margin-bottom: 20px;
+    color: var(--primary-lighter);
+    box-shadow: var(--background-color) 0px 3px 0px 0px;
+    font-weight: 400;
+}
+
+.footer-contact-me h2::before{
+    content: "CONTACT ME";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 2%;
+    left: 0.25%;
+    color: var(--background-color);
+}
+
+
+.footer-contact-me form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-contact-me form > * {
+    transition: 0.2s ease-in-out;
+    border: #00000000 1px solid;
+}
+
+.footer-contact-me input {
+    padding: 10px;
+    font-size: 1.2rem;
+    font-family: var(--body-font), sans-serif;
+    background-color: var(--primary-lighter);
+    color: var(--background-color);
+    border: #00000000 1px solid;
+    transition: 0.2s ease-in-out;
+}
+
+.footer-contact-me input:focus, .footer-contact-me textarea:focus{
+    animation: hov 0.2s ease-in-out 1;
+    box-shadow: var(--black-color) -5px 5px 0px 0px;
+    border: 1px solid var(--black-color);
+}
+
+.footer-contact-me input:hover, .footer-contact-me textarea:hover{
+    box-shadow: var(--black-color) -3px 3px 0px 0px;
+}
+
+.footer-contact-me input::placeholder {
+    color: var(--background-color);
+}
+
+.footer-contact-me textarea {
+    padding: 10px;
+    font-size: 1.2rem;
+    font-family: var(--body-font), sans-serif;
+    background-color: var(--primary-lighter);
+    color: var(--background-color);
+    resize: vertical;
+}
+
+.footer-contact-me textarea::placeholder {
+    color: var(--background-color);
+}
+
+.footer-contact-me div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-contact-me button {
+    flex: 1;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-family: var(--heading-font), sans-serif;
+    border: var(--black-color) 0px solid;
+    background-color: var(--black-color);
+    color: var(--background-color);
+    cursor: pointer;
+    border: #00000000 1px solid;
+    transition: 0.2s ease-in-out;
+    font-weight: 500;
+}
+
+.footer-contact-me button:hover {
+    box-shadow: var(--black-color) -3px 3px 0px 0px;
+    border: 1px solid var(--black-color);
+    background-color: var(--primary-color);
+}
+
+.footer-contact-me button:active {
+    background-color: var(--primary-color);
+    box-shadow: var(--background-color) 0px 0px 0px 4px;
+    border: 1px solid #00000000;
+    color: var(--background-color);
+    transform: scale(0.95);
+}
+
+.footer-links-holder, .footer-toc {
+    margin-top: 40px;
+    gap: 15px;
+    padding-left: 15px;
+    border-left : var(--background-color) 3px solid;
+}
+
+.footer-links-holder div, .footer-toc div{
+    display: block;
+}
+
+.footer-links-holder a, .footer-toc a{
+    position: relative;
+    text-decoration: none;
+    color: var(--background-color);
+    font-size: 1.2rem;
+    font-family: var(--heading-font), sans-serif;
+    transition: 0.2s ease-in-out;
+}
+
+.footer-links-holder a::after, .footer-toc a::after{
+    position: absolute;
+    content: "";
+    background-color: var(--background-color);
+    height: 3px;
+    width: 0%;   
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.footer-links-holder a:hover::after, .footer-toc a:hover::after{
+    width: 100%;
+    transition: 0.2s ease-in-out;
+}
+
+.footer-socials{
+    padding-left: 15px;
+    border-left : var(--background-color) 3px solid;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    transition: 0.2s ease-in-out;
+}
+
+.footer-socials a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease-in-out;
+}
+
+.footer-socials a img{
+    width: 40px;
+    height: 40px;
+    transition: 0.2s ease-in-out;
+}
+
+.footer-socials a:hover{
+    transform: scale(1.1);
+}
+
+.footer-socials:hover{
+    gap: 15px;
+}
+
+.footer-logo{
+    padding:50px 0px;
+    overflow: hidden;
+}
+
+.footer-logo h2{
+    font-size: 2rem;
+    font-family: var(--heading-font), sans-serif;
+    color: var(--background-color);
+}
+
+.footer-logo-img{
+    position: absolute;
+    top: 60%;
+    right: 58%;
+    width: 25%;
+    transform: scaleX(-1) rotate(5deg);
+}
+
+.footer-toc {
+    margin-top: 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.footer-copyright {
+    padding-left: 15px;
+    border-left : var(--background-color) 3px solid;
+    display: flex;
+    align-items: flex-end;
+    font-family: var(--body-font), sans-serif;
+}

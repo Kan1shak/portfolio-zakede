@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+    <link rel="stylesheet" href="css/login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-holder">
+        <div class="login-image">
+            <!-- <img src="/images/login.gif" alt="Login Image"> -->
+        </div>
+        <div class="login-form-holder">
+            <form action="/login" method="POST" class="login-form">
+                <h2 class="login-heading">Login</h2>
+                <input type="username" name="username" id="username" class="login-input" placeholder="Username">
+                <input type="password" name="password" id="password" class="login-input" placeholder="Password">
+                <button type="submit" class="login-button">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "portfolio-zakede",
+  "version": "1.0.0",
+  "description": "Portfolio of ZakeDe",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kan1shak/portfolio-zakede.git"
+  },
+  "keywords": [
+    "portfolio",
+    "zakede"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kan1shak/portfolio-zakede/issues"
+  },
+  "homepage": "https://github.com/Kan1shak/portfolio-zakede#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.2.0"
+  }
+}

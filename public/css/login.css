@@ -1,0 +1,111 @@
+@keyframes hov {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.01);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+.login-holder {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+.login-image{
+    flex: 1;
+    height: 100%;
+}
+
+.login-image img {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+    border-radius: 5px;
+}
+
+.login-form-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100vh;
+    padding: 20px;
+    background-color: var(--primary-color);
+}
+
+.login-form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    font-family: var(--heading-font), sans-serif;
+    font-size: 2rem;
+    color: var(--background-color)
+}
+
+.login-form input {
+    padding: 10px;
+    font-size: 1.2rem;
+    font-family: var(--body-font), sans-serif;
+    background-color: var(--primary-lighter);
+    color: var(--background-color);
+    border: #00000000 1px solid;
+    transition: 0.2s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.login-image input:focus{
+    animation: hov 0.2s ease-in-out 1;
+    box-shadow: var(--black-color) -5px 5px 0px 0px;
+    border: 1px solid var(--black-color)
+}
+
+.login-form input:hover{
+    box-shadow: var(--black-color) -3px 3px 0px 0px;
+}
+
+.login-form input::placeholder {
+    color: var(--background-color);
+}
+
+.login-form button {
+    padding: 10px;
+    font-size: 1.2rem;
+    font-family: var(--heading-font), sans-serif;
+    border: var(--black-color) 0px solid;
+    background-color: var(--black-color);
+    color: var(--background-color);
+    cursor: pointer;
+    border: #00000000 1px solid;
+    transition: 0.2s ease-in-out;
+    font-weight: 500;
+}
+
+.login-form button:hover {
+    box-shadow: var(--black-color) -3px 3px 0px 0px;
+    border: 1px solid var(--black-color);
+    background-color: var(--primary-color);
+}
+
+.login-form button:active {
+    background-color: var(--primary-color);
+    box-shadow: var(--background-color) 0px 0px 0px 4px;
+    border: 1px solid #00000000;
+    color: var(--background-color);
+    transform: scale(0.95);
+}

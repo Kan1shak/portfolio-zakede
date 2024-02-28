@@ -7,6 +7,7 @@ import json from "jsonwebtoken";
 import { connect } from "http2";
 import {connectDB} from "./data/database.js";
 import loginrouter from "./routes/login.js";
+import adminRouter from "./routes/admin.js";
 const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -21,6 +22,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 
 app.use(loginrouter);
+app.use(adminRouter);
 
 app.get('/', (req,res)=>{
     res.render('index');

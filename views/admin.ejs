@@ -3,8 +3,94 @@
 <head>
     <%- include('./partials/head'); %>
     <title>Admin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.snow.css" rel="stylesheet">
+    <script src="/scripts/admin.js" defer></script>
+    <script src="/scripts/quill.imageUploader.min.js"></script>
+    <link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
-    
+    <div class="posts-sidebar">
+        <h1>Posts</h1>
+        <div class="posts-holder">
+            <% postList.forEach(post => { %>
+                <a href="/admin/posts/<%= post._id %>" class="post-item">
+                    <img class="post-thumb" src="<%= post.image %>" alt="">
+                    <div>
+                        <p><%= post.title %></p>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </div>
+                </a>
+            <% }) %>
+            <!-- <a href="/admin/posts/placeholderID" class="post-item">
+                <img class="post-thumb" src="src/to/thumb" alt="">
+                <div>
+                    <p>Post Title</p>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </div>
+            </a> -->
+        </div>
+    </div>
+    <div class="new-post-holder">
+        <h1>Hello ZakeDe 🐀</h1>
+        <h2>Create a new post</h2>
+        <input type = "text" name = "title" placeholder = "Title" required>
+        <input type = "url" name = "image" placeholder = "Thumbnail URL" required>
+        <input type = "file" name = "image" placeholder = "Image">
+        <div class="quill-container">
+            <div id="toolbar-container">
+                <span class="ql-formats">
+                  <select class="ql-font"></select>
+                  <select class="ql-size"></select>
+                </span>
+                <span class="ql-formats">
+                  <button class="ql-bold"></button>
+                  <button class="ql-italic"></button>
+                  <button class="ql-underline"></button>
+                  <button class="ql-strike"></button>
+                </span>
+                <span class="ql-formats">
+                  <select class="ql-color"></select>
+                  <select class="ql-background"></select>
+                </span>
+                <span class="ql-formats">
+                  <button class="ql-script" value="sub"></button>
+                  <button class="ql-script" value="super"></button>
+                </span>
+                <span class="ql-formats">
+                  <button class="ql-header" value="1"></button>
+                  <button class="ql-header" value="2"></button>
+                  <button class="ql-blockquote"></button>
+                  <button class="ql-code-block"></button>
+                </span>
+                <span class="ql-formats">
+                  <button class="ql-list" value="ordered"></button>
+                  <button class="ql-list" value="bullet"></button>
+                  <button class="ql-indent" value="-1"></button>
+                  <button class="ql-indent" value="+1"></button>
+                </span>
+                <span class="ql-formats">
+                  <button class="ql-direction" value="rtl"></button>
+                  <select class="ql-align"></select>
+                </span>
+                <span class="ql-formats">
+                  <button class="ql-link"></button>
+                  <button class="ql-image"></button>
+                  <button class="ql-video"></button>
+                  <button class="ql-formula"></button>
+                </span>
+                <span class="ql-formats">
+                  <button class="ql-clean"></button>
+                </span>
+              </div>
+            <div id="editor">
+            </div>
+        </div>
+        <button id="new-post-btn">POST IT!</button>
+    </div>
 </body>
 </html>

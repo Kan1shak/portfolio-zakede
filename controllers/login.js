@@ -1,7 +1,6 @@
 import jwt from "jsonwebtoken"; 
 import { users } from "../models/users.js";
 import bcrypt from "bcrypt";
-import { render } from "ejs";
 
 let user;
 export const check =async(req,res,next)=>{
@@ -35,7 +34,7 @@ export const isPresent =async(req,res,next) =>{
     else next();
 }
 
-export const login =async(req,  res)=>{
+export const login =async(req, res)=>{
     res.render("login");
 }
 
@@ -44,5 +43,5 @@ export const login_post = (req,res)=>{
     res.cookie("token", token,{
     httpOnly:true,
     })
-    res.redirect("/");
+    res.redirect("/admin");
 }

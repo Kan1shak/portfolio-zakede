@@ -40,6 +40,58 @@ body {
     outline: none;
 }
 
+input {
+    padding: 10px;
+    font-size: 1.2rem;
+    font-family: var(--body-font), sans-serif;
+    background-color: var(--primary-lighter);
+    color: var(--background-color);
+    border: #00000000 1px solid;
+    transition: 0.2s ease-in-out;
+}
+
+input:focus {
+    animation: hov 0.2s ease-in-out 1;
+    box-shadow: var(--black-color) -5px 5px 0px 0px;
+    border: 1px solid var(--black-color);
+}
+
+input:hover {
+    box-shadow: var(--black-color) -3px 3px 0px 0px;
+}
+
+input::placeholder {
+    color: var(--background-color);
+}
+
+button {
+    padding: 10px;
+    font-size: 1.2rem;
+    font-family: var(--heading-font), sans-serif;
+    border: var(--black-color) 0px solid;
+    background-color: var(--black-color);
+    color: var(--background-color);
+    cursor: pointer;
+    border: #00000000 1px solid;
+    transition: 0.2s ease-in-out;
+    font-weight: 500;
+}
+
+button:hover {
+    box-shadow: var(--black-color) -3px 3px 0px 0px;
+    border: 1px solid var(--black-color);
+    background-color: var(--primary-color);
+}
+
+button:active {
+    background-color: var(--primary-color);
+    box-shadow: var(--background-color) 0px 0px 0px 4px;
+    border: 1px solid #00000000;
+    color: var(--background-color);
+    transform: scale(0.95);
+}
+
+
 /* ANIMATIONS */
 @keyframes hov {
     0% {

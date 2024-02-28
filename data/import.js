@@ -1,4 +1,3 @@
-// import test usrname
 import { users } from "../models/users.js";
 import bcrypt from "bcrypt";
 import {connectDB} from "../data/database.js";

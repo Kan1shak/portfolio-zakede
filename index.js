@@ -8,6 +8,8 @@ import { connect } from "http2";
 import {connectDB} from "./data/database.js";
 import loginrouter from "./routes/login.js";
 import adminRouter from "./routes/admin.js";
+import { makePostList } from "./controllers/admin.js";
+import portfolioRouter from "./routes/portfolio.js";
 const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -23,9 +25,11 @@ app.use(cookieParser());
 
 app.use(loginrouter);
 app.use(adminRouter);
+app.use(portfolioRouter);
 
-app.get('/', (req,res)=>{
-    res.render('index');
+app.get('/', async (req,res)=>{
+    const postList = await makePostList();
+    res.render('index',{postList});
 });
 
 app.listen(3000, ()=>{

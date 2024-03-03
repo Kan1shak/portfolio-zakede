@@ -211,6 +211,11 @@ footer {
     transform: scaleX(-1) rotate(5deg);
 }
 
+.footer-logo a {
+    text-decoration: none;
+    color: var(--background-color);
+}
+
 .footer-toc {
     margin-top: 0;
     display: flex;

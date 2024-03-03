@@ -140,7 +140,7 @@ header img {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    background-size: cover;
 }
 
 .projects-item:hover{

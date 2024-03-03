@@ -5,7 +5,10 @@
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/quickview.css">
     <title>ZakeDe | Home</title>
+    <script src="/scripts/portfolio.js" defer></script>
+    <script src="/scripts/index.js" defer></script>
 </head>
 <body>
     <%- include('./partials/nav'); %>
@@ -58,17 +61,35 @@
             My Projects
         </h2>
         <div class="projects-holder">
-            <div class="projects-item"></div>
-            <div class="projects-item"></div>
-            <div class="projects-item"></div>
-            <div class="projects-item"></div>
-            <div class="projects-item"></div>
-            <div class="projects-item"></div>
+            <% let i = 0 %>
+            <% postList.forEach(post => { %>
+                <% if (i > 8) { return } %>
+                <div class="projects-item" style="background-image: url(<%= post.image %>);background-repeat: no-repeat;">
+                    <div style="display: none;">
+                        <h2><%= post.title %></h2>
+                        <p><%= post.content %></p>
+                        <span> <%= post._id %></span>
+                    </div>    
+                </div>
+                <% i++ %>
+                <% }) %>
         </div>
-
-        <h2 class="projects-more"><a href="#">More Work ></a></h2>
+        <h2 class="projects-more"><a href="/portfolio">More Work ></a></h2>
     </section>
-
+    <div class="quickview-holder">
+        <div class="quickview-close-holder">
+            <button id="quickview-close">
+                <img src="/images/close.svg" alt="close overlay">
+            </button>
+        </div>
+        <div class="quickview">
+            <div class="quickview-content">
+                <div style="width: 75%;"><h2 class="quickview-title"></h2></div>
+                <div class="quickview-image"></div>
+                <div style="width: 100%;width: 100%;display: flex;justify-content: center;"><p class="quickview-text"></p></div>
+            </div>
+        </div>
+    </div>
     <%- include('./partials/footer'); %>
 </body>
 </html>

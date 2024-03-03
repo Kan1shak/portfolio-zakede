@@ -8,7 +8,11 @@ const postSchema = new mongoose.Schema({
     },
     content: {
         type: String,
-        required: true
+        required: false
+    },
+    qlDelta: {
+        type: String,
+        required: false
     },
     image: {
         type: String,

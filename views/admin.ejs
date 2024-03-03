@@ -15,28 +15,29 @@
     <div class="posts-sidebar">
         <h1>Posts</h1>
         <div class="posts-holder">
+            <% let i = 0 %>
             <% postList.forEach(post => { %>
-                <a href="/admin/posts/<%= post._id %>" class="post-item">
-                    <img class="post-thumb" src="<%= post.image %>" alt="">
-                    <div>
-                        <p><%= post.title %></p>
-                        <button>Edit</button>
-                        <button>Delete</button>
+                <div class="post-item">
+                  <div class="post-thumb-holder"><img class="post-thumb" src="<%= post.image %>" alt=""></div>
+                    <div class="post-item-text">
+                        <a href="/admin/posts/<%= post._id %>"><p><%= post.title %></p></a>
+                        <a href= "/admin/edit/<%= post._id %>"><button>Edit</button></a>
+                        <a href="/admin/delete/<%= post._id %>"><button>Delete</button></a>
                     </div>
-                </a>
-            <% }) %>
-            <!-- <a href="/admin/posts/placeholderID" class="post-item">
-                <img class="post-thumb" src="src/to/thumb" alt="">
-                <div>
-                    <p>Post Title</p>
-                    <button>Edit</button>
-                    <button>Delete</button>
                 </div>
-            </a> -->
+            <% }) %>
+            <% if (postList.length === 0) { %>
+                <p>No posts yet</p>
+            <% } %>
         </div>
     </div>
     <div class="new-post-holder">
-        <h1>Hello ZakeDe 🐀</h1>
+        <div class="greeting-holder">
+          <h1>Hello ZakeDe 🐀</h1>
+          <a href="/admin/logout">
+            <button>LOGOUT</button>
+          </a>
+        </div>
         <h2>Create a new post</h2>
         <input type = "text" name = "title" placeholder = "Title" required>
         <input type = "url" name = "image" placeholder = "Thumbnail URL" required>

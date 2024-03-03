@@ -1,0 +1,29 @@
+.contact-holder {
+    padding: 80px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-heading {
+    font-size: 2.5rem;
+    font-family: var(--heading-font), sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--black-color);
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-content p {
+    font-size: 1rem;
+    font-family: var(--body-font), sans-serif;
+    color: var(--black-color);
+    text-align: center;
+}

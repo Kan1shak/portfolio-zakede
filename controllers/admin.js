@@ -1,5 +1,6 @@
 import {posts} from "../models/posts.js";
 import { QuillDeltaToHtmlConverter } from "quill-delta-to-html";
+import { isPresent } from "../controllers/login.js";
 
 export const makePostList = async ()=> {
     const postList = await posts.find();
@@ -8,6 +9,7 @@ export const makePostList = async ()=> {
 }
 
 export const getAdmin = async(req, res)=>{
+    isPresent(req,res,()=>{res.redirect("/login")});
     const postList = await makePostList();
     res.render("admin",{postList});
 }
@@ -18,6 +20,7 @@ export const logout = (req,res)=>{
 }
 
 export const newPost = async(req,res)=>{
+    isPresent(req,res,()=>{res.redirect("/login")});
     const {title, content,image,rawHTML} = req.body;
     const deltaOps = JSON.parse(req.body.content);
     let cfg = {inlineStyles: true};
@@ -29,12 +32,14 @@ export const newPost = async(req,res)=>{
 }
 
 export const deletePost = async(req,res)=>{
+    isPresent(req,res,()=>{res.redirect("/login")});
     const id = req.params.id;
     await posts.findByIdAndDelete(id);
     res.redirect("/admin");
 }
 
 export const editPost = async(req,res)=>{
+    isPresent(req,res,()=>{res.redirect("/login")});
     const postList = await makePostList();
     const id = req.params.id
     const post = await posts.findById(id);
@@ -42,6 +47,7 @@ export const editPost = async(req,res)=>{
 }
 
 export const updatePost = async(req,res)=>{
+    isPresent(req,res,()=>{res.redirect("/login")});
     const id = req.params.id;
     const {title, content,image,rawHTML} = req.body;
     const deltaOps = JSON.parse(req.body.content);

@@ -24,12 +24,18 @@ export const check =async(req,res,next)=>{
 export const isPresent =async(req,res,next) =>{
     let {token} = req.cookies;
     if(token){
-        const decoded=jwt.verify(token,"yippie");
+        let decoded;
+        try {
+            decoded=jwt.verify(token,"yippie");
+        }
+        catch (err){
+            return next();
+        }
         req.user = await users.findById(decoded._id);
         if(!req.user){
             return next();
         }
-        res.redirect("/admin");
+        // res.redirect("/admin");
     }
     else next();
 }

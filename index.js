@@ -3,13 +3,17 @@ import path from "path";
 import cookieParser from "cookie-parser";
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import json from "jsonwebtoken";
-import { connect } from "http2";
+
 import {connectDB} from "./data/database.js";
+import { makePostList } from "./controllers/admin.js";
+
 import loginrouter from "./routes/login.js";
 import adminRouter from "./routes/admin.js";
-import { makePostList } from "./controllers/admin.js";
 import portfolioRouter from "./routes/portfolio.js";
+import aboutRouter from "./routes/about.js";
+import contactRouter from "./routes/contact.js";
+import tocRouter from "./routes/toc.js";
+
 const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -26,6 +30,9 @@ app.use(cookieParser());
 app.use(loginrouter);
 app.use(adminRouter);
 app.use(portfolioRouter);
+app.use(aboutRouter);
+app.use(contactRouter);
+app.use(tocRouter);
 
 app.get('/', async (req,res)=>{
     const postList = await makePostList();

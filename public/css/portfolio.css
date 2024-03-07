@@ -96,3 +96,28 @@
     bottom: 20%;
     
 }
+
+
+@media screen and (max-width: 768px) {
+    #portfolio {
+        height: 100%;
+        padding: 40px 20px;
+    }
+    .portfolio-holder {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-item:nth-child(n) {
+        grid-column: 1/2;
+    }
+
+    .portfolio-item:nth-child(n) .projects-item-overlay h2{
+        bottom: -80%;
+        transition: 0.3s ease-in-out;
+    }
+
+    .portfolio-item:hover .projects-item-overlay h2 {
+        bottom: 20%;
+    }
+
+}

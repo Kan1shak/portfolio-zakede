@@ -99,3 +99,26 @@
     object-fit: cover;
     transition: all 0.2s ease-in-out;
 }
+
+.quickview-title-holder{
+    width: 75%;
+}
+
+@media screen and (max-width: 768px){
+    .quickview-content{
+        padding: 60px 20px;
+    }
+
+    .quickview-image img{
+        width: 100%;
+    }
+
+    .quickview-text {
+        width: 100%;
+    }
+
+    .quickview-title-holder{
+        width: 100%;
+    }
+    
+}

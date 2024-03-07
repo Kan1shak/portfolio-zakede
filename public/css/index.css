@@ -218,3 +218,75 @@ header img {
     font-family: var(--heading-font), sans-serif;
     text-decoration: underline;
 }
+
+@media screen and (max-width: 768px) {
+    #about {
+        flex-direction: column;
+        height: 100%;
+        padding: 40px 20px;
+    }
+    .about-holder {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .about-image-holder {
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+
+    .about-image-holder img {
+        width: 100%;
+        height: auto;
+    }
+
+    .about-heading {
+        text-align: left;
+    }
+
+    .about-p {
+        text-align: left;
+    }
+    #skills {
+        flex-direction: column;
+        height: 100%;
+        padding: 40px 20px;
+    }
+    .skills-holder {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-heading {
+        text-align: left;
+    }
+
+    .skills-holder > * {
+        width: 100%;
+    }
+
+    .skills-text {
+        padding: 20px 0px;
+    }
+    .skills-anim {
+        margin-bottom: 20px;
+    }
+    #projects {
+        height: 100%;
+        padding: 40px 20px;
+    }
+    .projects-holder {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-item:nth-child(n) {
+        grid-column: 1/2;
+    }
+    .projects-more {
+        text-align: center;
+    }
+    .projects-more a {
+        font-size: 2rem;
+    }
+}

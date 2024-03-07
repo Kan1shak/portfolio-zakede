@@ -50,7 +50,7 @@
                 </div>
         
                 <div class="skills-anim">
-                    Animation Placeholder
+                    <img src="/images/pen.gif" alt="">
                 </div>
             </div>
         </div>
@@ -65,11 +65,14 @@
             <% postList.forEach(post => { %>
                 <% if (i > 8) { return } %>
                 <div class="projects-item" style="background-image: url(<%= post.image %>);background-repeat: no-repeat;">
+                    <div class="projects-item-overlay">
+                        <h2><%= post.title %></h2>
+                    </div>
                     <div style="display: none;">
                         <h2><%= post.title %></h2>
                         <p><%= post.content %></p>
                         <span> <%= post._id %></span>
-                    </div>    
+                    </div>
                 </div>
                 <% i++ %>
                 <% }) %>

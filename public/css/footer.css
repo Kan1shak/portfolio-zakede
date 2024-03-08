@@ -189,7 +189,7 @@ footer {
 }
 
 .footer-socials:hover{
-    gap: 15px;
+    /* gap: 15px; */
 }
 
 .footer-logo{

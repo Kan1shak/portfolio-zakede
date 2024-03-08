@@ -1,3 +1,6 @@
+const contactImage = document.querySelector('.contact-image img');
 if (isMobile()) {
-    document.querySelector('.contact-image').src = '/images/Contact_Me.png';
+    contactImage.src = '/images/Contact_Me.png';
+} else {
+    contactImage.src = '/images/Contact_Me.gif';
 }

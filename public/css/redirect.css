@@ -1,0 +1,38 @@
+.redirect-holder {
+    padding: 80px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.redirect {
+    width: 65%;
+}
+
+.redirect-heading {
+    font-size: 2.5rem;
+    font-family: var(--heading-font), sans-serif;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--black-color);
+}
+
+.redirect p {
+    font-size: 1rem;
+    font-family: var(--body-font), sans-serif;
+    color: var(--black-color);
+    text-align: center;
+}
+
+
+@media screen and (max-width: 768px) {
+    .redirect-holder {
+        padding: 50px 24px;
+    }
+
+    .redirect {
+        width: 100%;
+    }
+    
+}

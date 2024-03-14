@@ -1,6 +1,8 @@
 import {posts} from "../models/posts.js";
 import { QuillDeltaToHtmlConverter } from "quill-delta-to-html";
 import { isPresent } from "../controllers/login.js";
+import { contacts } from "../models/contact.js"; 
+
 
 export const makePostList = async ()=> {
     const postList = await posts.find();
@@ -8,10 +10,17 @@ export const makePostList = async ()=> {
     return postList;
 }
 
+const makeMessageList = async ()=>{
+    const messageList = await contacts.find();
+    messageList.reverse();
+    return messageList;
+}
+
 export const getAdmin = async(req, res)=>{
     isPresent(req,res,()=>{res.redirect("/login")});
     const postList = await makePostList();
-    res.render("admin",{postList});
+    const messageList = await makeMessageList();
+    res.render("admin",{postList,messageList});
 }
 
 export const logout = (req,res)=>{

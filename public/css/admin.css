@@ -3,6 +3,10 @@ body {
     height: 100vh;
   }
   
+  h1 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+  }
   .posts-sidebar {
     width: 20%;
     height: 100%;
@@ -101,12 +105,14 @@ body {
     padding: 0 0 5px;
   }
   
-  .new-post-holder {
+  .admin-holder {
     padding: 30px 50px;
     width: 80%;
+    height: 100vh;
+    overflow: auto;
   }
   
-  .new-post-holder input {
+  .admin-holder input {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -176,4 +182,50 @@ body {
     fill: transparent;
     color: var(--background-color);
     stroke: var(--background-color);
+  }
+
+  .messages-holder {
+    margin: 40px 0px;
+    border-top: 1px solid var(--black-color);
+  }
+
+  .messages-holder h1{
+    margin-top: 40px;
+  }
+
+
+  .message {
+    padding: 20px;
+    margin: 20px 0px;
+    border: 1px solid var(--primary-lighter);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.2s ease-in-out;
+  }
+
+  .mesasge-label{
+    font-weight: 500;
+  }
+
+  .message:hover {
+    border-color: var(--black-color);
+    background-color: var(--primary-lighter);
+    color: var(--background-color);
+  }
+
+  @media screen and (max-width: 768px) {
+    body {
+      flex-direction: column;
+    }
+  
+    .posts-sidebar {
+      width: 100%;
+      height: 40vh;
+    }
+
+    .admin-holder {
+      width: 100%;
+      padding: 20px;
+    }
   }

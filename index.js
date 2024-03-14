@@ -13,6 +13,8 @@ import portfolioRouter from "./routes/portfolio.js";
 import aboutRouter from "./routes/about.js";
 import contactRouter from "./routes/contact.js";
 import tocRouter from "./routes/toc.js";
+import formRouter from "./routes/form.js";
+
 
 const app = express();
 
@@ -33,6 +35,7 @@ app.use(portfolioRouter);
 app.use(aboutRouter);
 app.use(contactRouter);
 app.use(tocRouter);
+app.use(formRouter);
 
 app.get('/', async (req,res)=>{
     const postList = await makePostList();

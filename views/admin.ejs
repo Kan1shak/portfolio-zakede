@@ -8,7 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.snow.css" rel="stylesheet">
     <script src="/scripts/admin.js" defer></script>
-    <script src="/scripts/quill.imageUploader.min.js"></script>
     <link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
@@ -31,7 +30,7 @@
             <% } %>
         </div>
     </div>
-    <div class="new-post-holder">
+    <div class="admin-holder">
         <div class="greeting-holder">
           <h1>Hello ZakeDe 🐀</h1>
           <a href="/admin/logout">
@@ -92,6 +91,21 @@
             </div>
         </div>
         <button id="new-post-btn">POST IT!</button>
+        <div class="messages-holder">
+          <h1>Messages</h1>
+          <div class="messages">
+              <% messageList.forEach(message => { %>
+                  <div class="message">
+                      <p><span class="mesasge-label">Name: </span><%= message.name %></p>
+                      <p><span class="mesasge-label">email: </span> <%= message.email %></p>
+                      <p><%= message.message %></p>
+                  </div>
+              <% }) %>
+              <% if (messageList.length === 0) { %>
+                  <p>No messages yet</p>
+              <% } %>
+          </div>
+      </div>
     </div>
 </body>
 </html>

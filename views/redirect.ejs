@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head'); %>
+    <title>ZakeDe | Contact</title>
+    <link rel="stylesheet" href="/css/redirect.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <%- include('./partials/nav'); %>
+    <div class="redirect-holder">
+        <div class="redirect">
+            <h1 class="redirect-heading"><%= title %></h1>
+            <p class="redirect-content"><%= message %></p>
+            <p class="redirect-url-text">
+                You will be redirected in a few seconds. If not, click <a href="<%- redirectUrl %>" class="redirect-url">here</a>.
+            </p>
+        </div>
+    </div>
+    <script>
+        window.setTimeout(function(){
+        window.location.href = "<%- redirectUrl %>";
+        }, 7000);
+    </script>
+    <%- include('./partials/footer'); %>
+</body>
+</html>

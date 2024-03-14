@@ -1,12 +1,21 @@
 <footer>
     <div class="footer-holder">
         <div class="footer-contact-me">
-            <form action="">
+            <form action="/submitform" method="post">
                 <h2 class="footer-contact-heading">CONTACT ME</h2>
-                <input type="text" placeholder="Name" class="footer-contact-input" name="name">
-                <textarea name="message" id="message" cols="30" rows="2" class="footer-contact-input" placeholder="Message"></textarea>
+                <input type="text" placeholder="Name" class="footer-contact-input" name="name" required>
+                <textarea name="message" id="message" cols="30" rows="2" class="footer-contact-input" placeholder="Message" required></textarea>
                 <div>
-                    <input type="email" placeholder="Email" class="footer-contact-input" name="email">
+                    <input type="email" placeholder="Email" class="footer-contact-input" name="email" required>
+                    <input type="text" style="display: none;" id="redirectfld" value="" name="redirectto" novalidate>
+                    <script>
+                        let absUrl = window.location.href.split('/');
+                        absUrl.shift();
+                        absUrl.shift();
+                        absUrl.shift();
+                        absUrl = absUrl.join('/');
+                        document.querySelector('#redirectfld').attributes[3].value = absUrl;
+                    </script>
                     <button type="submit" class="footer-contact-button">SEND</button>
                 </div>
             </form>

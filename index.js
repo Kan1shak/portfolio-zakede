@@ -42,6 +42,10 @@ app.get('/', async (req,res)=>{
     res.render('index',{postList});
 });
 
+app.use(function(req, res, next){
+    res.status(404).render('404');
+});
+
 app.listen(3000, ()=>{
     console.log("Server is running on port 3000");
 });

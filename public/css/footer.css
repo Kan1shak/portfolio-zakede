@@ -188,19 +188,22 @@ footer {
     transform: scale(1.1);
 }
 
-.footer-socials:hover{
-    /* gap: 15px; */
-}
 
 .footer-logo{
     padding:50px 0px;
     overflow: hidden;
 }
 
-.footer-logo h2{
-    font-size: 2rem;
-    font-family: var(--heading-font), sans-serif;
-    color: var(--background-color);
+.footer-img {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.footer-img img {
+    width: auto;
+    height: 70px;
+    object-fit: cover;
 }
 
 .footer-logo-img{

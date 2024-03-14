@@ -1,20 +1,27 @@
 nav {
     background-color: var(--primary-color);
     color: var(--background-color);
-    padding: 16px 48px;
+    padding: 0px 48px;
     box-shadow: #373737 0px 0px 0px 8px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
 .nav-logo {
-    font-family: var(--heading-font), sans-serif;
-    font-size: 1.5rem;
-    color: var(--background-color);
-    text-decoration: none;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-logo img {
+    width: auto;
+    height: 70px;
+    object-fit: cover;
 }
 
 .nav-links-holder{
@@ -57,6 +64,7 @@ nav {
         flex-direction: column;
         gap: 15px;
         position: sticky;
+        padding: 0px 24px;
     }
 
     nav.active {

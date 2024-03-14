@@ -107,8 +107,36 @@ header img {
 }
 
 .skills-anim img {
-    width: 70%;
+    width: 80%;
     height: auto;
+    animation: hover 14s infinite ease-in-out;
+}
+
+@keyframes hover {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    15% {
+        transform: translate(-9px, -12px);
+    }
+    30% {
+        transform: translate(-6px, 6px);
+    }
+    45% {
+        transform: translate(-5px, 15px);
+    }
+    60% {
+        transform: translate(-9px, -12px);
+    }
+    75% {
+        transform: translate(-3px, -3px);
+    }
+    90% {
+        transform: translate(6px, 3px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
 }
 
 #projects {

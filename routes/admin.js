@@ -5,7 +5,7 @@ import { newPost } from "../controllers/admin.js";
 import { deletePost } from "../controllers/admin.js";
 import { editPost } from "../controllers/admin.js";
 import { updatePost } from "../controllers/admin.js";
-
+import { deleteMessage } from "../controllers/admin.js";
 const router = express.Router();
 
 const adminAddress = process.env.ADMIN_LINK || "admin";
@@ -21,5 +21,7 @@ router.get(`/${adminAddress}/delete/:id`, deletePost);
 router.get(`/${adminAddress}/edit/:id`, editPost);
 
 router.post(`/${adminAddress}/update/:id`, updatePost);
+
+router.get(`/${adminAddress}/deleteMessage/:id`, deleteMessage);
 
 export default router;

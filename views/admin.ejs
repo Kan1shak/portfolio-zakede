@@ -99,6 +99,7 @@
                       <p><span class="mesasge-label">Name: </span><%= message.name %></p>
                       <p><span class="mesasge-label">email: </span> <%= message.email %></p>
                       <p><%= message.message %></p>
+                      <a href="/<%- adminAddress %>/deleteMessage/<%= message._id %>"><button>Delete</button></a>
                   </div>
               <% }) %>
               <% if (messageList.length === 0) { %>

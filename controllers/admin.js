@@ -52,6 +52,15 @@ export const deletePost = async(req,res)=>{
     });
 }
 
+export const deleteMessage = async(req,res)=>{
+    isPresent(req,res,async ()=>{
+        const id = req.params.id;
+        await contacts.findByIdAndDelete(id);
+        res.redirect(`/${adminAddress}`);
+    });
+}
+
+
 export const editPost = async(req,res)=>{
     isPresent(req,res,async()=>{
         const postList = await makePostList();

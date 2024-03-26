@@ -24,6 +24,10 @@ import formRouter from "./routes/form.js";
 
 const app = express();
 
+// for cloudflare proxy
+const numberOfProxies = 1;
+app.set('trust proxy', numberOfProxies);
+
 const options = {
     cert: fs.readFileSync('/etc/letsencrypt/live/mannatgd.com/fullchain.pem'),
     key: fs.readFileSync('/etc/letsencrypt/live/mannatgd.com/privkey.pem')
@@ -39,7 +43,10 @@ app.use(limiter);
 app.use(
     helmet.contentSecurityPolicy({
         directives: {
+        "default-src" : ["'self'"],
         "script-src": ["'self'", "cdn.jsdelivr.net"],
+        "connect-src": ["'self'",'api.imgbb.com'],
+        "img-src": ["'self'", "i.ibb.co", "imgbb.com", "data:"],
         },
     }),
 );

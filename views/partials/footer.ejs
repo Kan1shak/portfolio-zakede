@@ -1,4 +1,5 @@
 <footer>
+    <script src="/scripts/getPageLink.js" defer></script>
     <div class="footer-holder">
         <div class="footer-contact-me">
             <form action="/submitform" method="post">
@@ -8,14 +9,6 @@
                 <div>
                     <input type="email" placeholder="Email" class="footer-contact-input" name="email" required>
                     <input type="text" style="display: none;" id="redirectfld" value="" name="redirectto" novalidate>
-                    <script>
-                        let absUrl = window.location.href.split('/');
-                        absUrl.shift();
-                        absUrl.shift();
-                        absUrl.shift();
-                        absUrl = absUrl.join('/');
-                        document.querySelector('#redirectfld').attributes[3].value = absUrl;
-                    </script>
                     <button type="submit" class="footer-contact-button">SEND</button>
                 </div>
             </form>
@@ -40,14 +33,14 @@
         <div class="footer-socials">
             <a href="https://www.instagram.com/mannat.2077/" class="footer-social-link"><img src="images/instagram.svg" alt="Instagram" width="20px" height="20px"></a>
             <a href="https://www.linkedin.com/in/mannat-basra-933889246/" class="footer-social-link"><img src="images/linkedin.svg" alt="Linkedin" width="20px" height="20px"></a>
-            <a href="mailto:mannat@mannatgd.de" class="footer-social-link"><img src="images/mail.svg" alt="Email" width="20px" height="20px"></a>
+            <a href="mailto:info@mannatgd.com" class="footer-social-link"><img src="images/mail.svg" alt="Email" width="20px" height="20px"></a>
         </div>
         <div class="footer-logo">
             <div class="footer-img">
                 <img src="/images/nav_logo.png" alt="Mannat Designs">
             </div>
-            <p><a href="mailto:zakede@whatever.com">zakede@whatever.com</a></p>
-            <p>+1 905-123-4567</p>
+            <p><a href="mailto:zakede@whatever.com">info@mannatgd.com</a></p>
+            <!-- <p>+1 905-123-4567</p> -->
         </div>
         <div class="footer-toc">
             <div>

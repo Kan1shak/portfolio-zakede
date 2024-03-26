@@ -7,6 +7,7 @@ header {
 header img {
     width: 80%;
     height: 80%;
+    animation: hover 14s infinite ease-in-out;
 }
 #about{
     height: 875px;
@@ -31,7 +32,8 @@ header img {
     background-color: var(--primary-lighter);
     border: var(--black-color) 5px solid;
     transition: all 0.2s ease-in-out;
-        box-shadow: var(--black-color) -12px 8px 0px 0px;
+    padding: 30px;
+    box-shadow: var(--black-color) -12px 8px 0px 0px;
 }
 
 .about-image-holder:hover{

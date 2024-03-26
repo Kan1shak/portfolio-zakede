@@ -20,8 +20,8 @@
                   <div class="post-thumb-holder"><img class="post-thumb" src="<%= post.image %>" alt=""></div>
                     <div class="post-item-text">
                         <a href=""><p><%= post.title %></p></a>
-                        <a href= "/admin/edit/<%= post._id %>"><button>Edit</button></a>
-                        <a href="/admin/delete/<%= post._id %>"><button>Delete</button></a>
+                        <a href= "/<%- adminAddress %>/edit/<%= post._id %>"><button>Edit</button></a>
+                        <a href="/<%- adminAddress %>/delete/<%= post._id %>"><button>Delete</button></a>
                     </div>
                 </div>
             <% }) %>
@@ -32,8 +32,8 @@
     </div>
     <div class="admin-holder">
         <div class="greeting-holder">
-          <h1>Hello ZakeDe 🐀</h1>
-          <a href="/admin/logout">
+          <h1>Hello, Mannat</h1>
+          <a href="/<%= adminAddress %>/logout">
             <button>LOGOUT</button>
           </a>
         </div>

@@ -49,7 +49,7 @@ nav {
     background-color: var(--background-color);
     height: 3px;
     width: 0%;   
-    bottom: 2px;
+    bottom: -2px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -73,6 +73,7 @@ nav {
         width: 100lvw;
         background-color: #756ab6ba;
         backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
     }
 
     .logo-holder {

@@ -3,6 +3,8 @@ import { QuillDeltaToHtmlConverter } from "quill-delta-to-html";
 import { isPresent } from "../controllers/login.js";
 import { contacts } from "../models/contact.js"; 
 
+const adminAddress = process.env.ADMIN_LINK || "admin";
+
 
 export const makePostList = async ()=> {
     const postList = await posts.find();
@@ -17,10 +19,11 @@ const makeMessageList = async ()=>{
 }
 
 export const getAdmin = async(req, res)=>{
-    isPresent(req,res,()=>{res.redirect("/login")});
-    const postList = await makePostList();
-    const messageList = await makeMessageList();
-    res.render("admin",{postList,messageList});
+    isPresent(req,res, async() =>{
+        const postList = await makePostList();
+        const messageList = await makeMessageList();
+        res.render("admin",{postList,messageList,adminAddress});
+    });
 }
 
 export const logout = (req,res)=>{
@@ -29,40 +32,44 @@ export const logout = (req,res)=>{
 }
 
 export const newPost = async(req,res)=>{
-    isPresent(req,res,()=>{res.redirect("/login")});
-    const {title, content,image,rawHTML} = req.body;
-    const deltaOps = JSON.parse(req.body.content);
-    let cfg = {inlineStyles: true};
-    let converter = new QuillDeltaToHtmlConverter(deltaOps, cfg);
-    let html = converter.convert(); 
-    const post = new posts({title,content:html,image,qlDelta:rawHTML});
-    await post.save();
-    res.redirect("/admin");
+    isPresent(req,res,async ()=>{
+        const {title, content,image,rawHTML} = req.body;
+        const deltaOps = JSON.parse(req.body.content);
+        let cfg = {inlineStyles: true};
+        let converter = new QuillDeltaToHtmlConverter(deltaOps, cfg);
+        let html = converter.convert(); 
+        const post = new posts({title,content:html,image,qlDelta:rawHTML});
+        await post.save();
+        res.redirect(`/${adminAddress}`);
+    });
 }
 
 export const deletePost = async(req,res)=>{
-    isPresent(req,res,()=>{res.redirect("/login")});
-    const id = req.params.id;
-    await posts.findByIdAndDelete(id);
-    res.redirect("/admin");
+    isPresent(req,res,async ()=>{
+        const id = req.params.id;
+        await posts.findByIdAndDelete(id);
+        res.redirect(`/${adminAddress}`);
+    });
 }
 
 export const editPost = async(req,res)=>{
-    isPresent(req,res,()=>{res.redirect("/login")});
-    const postList = await makePostList();
-    const id = req.params.id
-    const post = await posts.findById(id);
-    res.render("edit",{post,postList});
+    isPresent(req,res,async()=>{
+        const postList = await makePostList();
+        const id = req.params.id
+        const post = await posts.findById(id);
+        res.render("edit",{post,postList,adminAddress});
+    });
 }
 
 export const updatePost = async(req,res)=>{
-    isPresent(req,res,()=>{res.redirect("/login")});
-    const id = req.params.id;
-    const {title, content,image,rawHTML} = req.body;
-    const deltaOps = JSON.parse(req.body.content);
-    let cfg = {inlineStyles: true};
-    let converter = new QuillDeltaToHtmlConverter(deltaOps, cfg);
-    let html = converter.convert(); 
-    await posts.findByIdAndUpdate(id,{title,content:html,image,qlDelta:rawHTML});
-    res.redirect("/admin");
+    isPresent(req,res, async()=>{
+        const id = req.params.id;
+        const {title, content,image,rawHTML} = req.body;
+        const deltaOps = JSON.parse(req.body.content);
+        let cfg = {inlineStyles: true};
+        let converter = new QuillDeltaToHtmlConverter(deltaOps, cfg);
+        let html = converter.convert(); 
+        await posts.findByIdAndUpdate(id,{title,content:html,image,qlDelta:rawHTML});
+        res.redirect(`/${adminAddress}`);
+    });
 }

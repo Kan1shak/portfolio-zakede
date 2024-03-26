@@ -1,9 +1,14 @@
+// let FontAttributor = Quill.import('formats/font');
+// let fonts = ['Poppins','Dela Gothic One'];
+// FontAttributor.whitelist = fonts;
+// Quill.register(FontAttributor, true);
+
 const quill = new Quill('#editor', {
   modules: {
     syntax: true,
     toolbar: '#toolbar-container',
   },
-  placeholder: 'Compose an epic...',
+  placeholder: 'Write things about your thing here...',
   theme: 'snow',
 });
 
@@ -39,7 +44,7 @@ fileInput.onchange = async () => {
   fileInput.parentElement.classList.remove("loading");
 };
 
-function post(path, params, method='post') {
+const post = (path, params, method='post') => {
 
   const form = document.createElement('form');
   form.method = method;
@@ -60,6 +65,14 @@ function post(path, params, method='post') {
   form.submit();
 }
 
+const validateParams = (params) => {
+  if(!params.title) return false;
+  if(!params.image) return false;
+  if(!params.image.match(/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|webp)/g)) return false;
+  return true;
+
+}
+
 const postBtn = document.querySelector("#new-post-btn");
 
 if (postBtn) {
@@ -69,8 +82,12 @@ if (postBtn) {
     const rawHTML = quill.root.innerHTML;
     const image = document.querySelector('input[type="url"]').value;
     const body = {title, content, image, rawHTML};
-    console.log(body);
-    post("/admin/new",body);
+    if(validateParams(body)){ 
+      post("/admin/new",body);
+    }
+    else{
+      alert('You need to enter a title and add an image you bozo!');
+    }
   }
 }
 

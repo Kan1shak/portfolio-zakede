@@ -8,16 +8,18 @@ import { updatePost } from "../controllers/admin.js";
 
 const router = express.Router();
 
-router.get("/admin", getAdmin);
+const adminAddress = process.env.ADMIN_LINK || "admin";
 
-router.get("/admin/logout", logout);
+router.get(`/${adminAddress}`, getAdmin);
 
-router.post("/admin/new", newPost);
+router.get(`/${adminAddress}/logout`, logout);
 
-router.get("/admin/delete/:id", deletePost);
+router.post(`/${adminAddress}/new`, newPost);
 
-router.get("/admin/edit/:id", editPost);
+router.get(`/${adminAddress}/delete/:id`, deletePost);
 
-router.post("/admin/update/:id", updatePost);
+router.get(`/${adminAddress}/edit/:id`, editPost);
+
+router.post(`/${adminAddress}/update/:id`, updatePost);
 
 export default router;

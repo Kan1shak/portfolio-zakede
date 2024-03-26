@@ -9,5 +9,5 @@ updatePostBtn.onclick = () => {
     const rawHTML = quill.root.innerHTML;
     const image = document.querySelector('input[type="url"]').value;
     const id = document.querySelector('[type="hidden"]').value;
-    post(`/admin/update/${id}`, {title, content, image, rawHTML});
+    post(`/${adminAddress}/update/${id}`, {title, content, image, rawHTML});
 }

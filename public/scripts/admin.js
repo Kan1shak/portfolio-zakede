@@ -3,6 +3,9 @@
 // FontAttributor.whitelist = fonts;
 // Quill.register(FontAttributor, true);
 
+// get the current url to get the admin address
+const adminAddress =  window.location.pathname.split('/')[1];
+
 const quill = new Quill('#editor', {
   modules: {
     syntax: true,
@@ -70,7 +73,6 @@ const validateParams = (params) => {
   if(!params.image) return false;
   if(!params.image.match(/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|webp)/g)) return false;
   return true;
-
 }
 
 const postBtn = document.querySelector("#new-post-btn");
@@ -83,7 +85,7 @@ if (postBtn) {
     const image = document.querySelector('input[type="url"]').value;
     const body = {title, content, image, rawHTML};
     if(validateParams(body)){ 
-      post("/admin/new",body);
+      post(`/${adminAddress}/new`,body);
     }
     else{
       alert('You need to enter a title and add an image you bozo!');
